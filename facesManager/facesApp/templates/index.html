@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registered Users</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Registered Users</h1>
+        <div class="user-list">
+            {% for user in users %}
+            <div class="card user-card">
+                <img src="{{ user.image_url }}" alt="{{ user.name }}" class="user-image">
+                <div class="user-info">
+                    <h2>{{ user.name }}</h2>
+                    <div class="user-actions">
+                        <a href="{% url 'edit_user' user.id %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'delete_user' user.id %}" class="btn btn-secondary">Delete</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{% url 'upload_image' %}" id="snap" class="btn btn-primary">Add new user</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Error{% endblock %}
+
+{% block body %}
+<div class="container error-container">
+    <h1 class="title error-title">Error</h1>
+    <p class="error-message">{{ error_message }}</p>
+</div>
+{% endblock %}

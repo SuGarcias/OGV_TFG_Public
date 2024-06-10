@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Capture Image{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="title">Upload or Capture Image</h1>
+    <form method="post" enctype="multipart/form-data" class="form-container">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="image">Upload an image:</label>
+            <input type="file" name="image" id="image" accept="image/*" class="form-control">
+        </div>
+        <div class="camera-group">
+            <label for="camera">Or capture from camera:</label>
+            <div class="camera-controls">
+                <video id="video" width="320" height="240" autoplay class="video-feed"></video>
+                <canvas id="canvas" width="320" height="240" class="hidden"></canvas>
+            </div>
+            <button type="button" id="snap" class="btn btn-primary">Capture</button>
+        </div>
+        <input type="hidden" name="camera_image" id="camera_image">
+        <br>
+        <button type="submit" id='snap' class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<script src="{% static 'camera.js' %}"></script>
+{% endblock %}

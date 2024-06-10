@@ -1,0 +1,197 @@
+/* Variables para manejar los colores y facilitar los cambios globales */
+:root {
+    --color-primary: #474747; /* Rojo Coca-Cola para botones y enlaces */
+    --color-secondary: #df3327; /* Amarillo Coca-Cola para hover states */
+    --color-bg: #F4F4F4; /* Color de fondo para la página */
+    --color-text: #333; /* Color de texto principal */
+    --color-footer-bg: #333; /* Fondo del pie de página */
+    --color-footer-text: #fff; /* Texto del pie de página */
+    --color-btn-bg: #aeb8f2; /* Fondo de botones */
+    --color-btn-bg-hover: #075b1d; /* Fondo de botones al pasar el ratón */
+    --color-btn-text: #fff; /* Color de texto en botones */
+}
+
+/* Estilos base para elementos HTML */
+body, h1, h2, h3, h4, h5, h6, p, form, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--color-text);
+}
+
+body {
+    background-color: var(--color-bg);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+h1.title {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2.5em;
+    color: var(--color-primary);
+}
+
+/* Navegación y estilos de los links */
+.navbar, .footer {
+    text-align: center;
+    background-color: var(--color-footer-bg);
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.navbar a, .footer a {
+    color: var(--color-footer-text);
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover, .footer a:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Estilos para los contenedores de usuarios y las tarjetas */
+.user-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.user-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 15px;
+}
+
+.user-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.user-info {
+    padding: 10px;
+}
+
+.btn, button {
+    background-color: var(--color-primary);
+    color: var(--color-btn-text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-btn-bg-hover);
+}
+
+
+/* Formularios y controles de entrada */
+.form-container, form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+
+input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.camera-group {
+    margin-top: 10px;
+}
+
+.camera-controls {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.video-feed, .hidden {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.hidden {
+    display: none; /* Oculto hasta que se capture la imagen */
+}
+
+#snap {
+    margin-top: 10px;
+    margin-left: auto;  /* Centra el botón horizontalmente estableciendo los márgenes izquierdo y derecho a 'auto' */
+    margin-right: auto;
+    width: 25%; /* Ajusta este valor según prefieras para el tamaño del botón */
+    display: block; /* Hace que el botón se comporte como un bloque para aceptar márgenes automáticos */
+}
+
+.btn-home {
+    display: inline-block;
+    background-color: var(--color-primary); /* O el color que desitgis */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.btn-home i {
+    margin-right: 5px;
+}
+.btn-home:hover {
+    background-color: var(--color-btn-bg-hover);
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 80vh; /* Ajusta l'altura segons les teves necessitats */
+}
+
+.error-title {
+    font-size: 2.5em;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.error-message {
+    font-size: 1.2em;
+    color: var(--color-text);
+    margin-bottom: 20px;
+}
