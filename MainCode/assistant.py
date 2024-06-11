@@ -106,7 +106,7 @@ class AssistantSystem:
         self.generate_audio("Desactivando asistente.", audio_lock)
 
     def provide_help(self, audio_lock):
-        help_text = "Puedes pedirme que apague el sistema, te salude, diga la hora o el clima."
+        help_text = "Puedes pedirme que encienda o apague el LED, cambie el color, ajuste el brillo, o inicie una animación o patrón. También puedes preguntarme la hora o desactivar el asistente."
         self.generate_audio(help_text, audio_lock)
 
     def get_current_time(self, audio_lock):
